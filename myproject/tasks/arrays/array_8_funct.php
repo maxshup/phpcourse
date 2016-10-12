@@ -3,20 +3,18 @@
 </head> 
 <?php
 
-//Вывести 10 раз Hello
-function sayHelloWorld($count = 1)
-{
-	$result = 0;
-	for ($i = 0; $i < $count; $i++) 
-	{
-		$result.= 'Hello World!<br>';
-	}
-	return $result;
-}
-$description = '';
-$inputData = 'a = 10, b = 20';
-$result = sayHelloWorld(10);
+//Удалите в массиве повторы значений. Например, для массива 1 2 4 4 2 5 результатом будет 1 2 4 5.
 
+function Array8($count = 1)
+{
+	$result = '';
+	$arr = [30,21,30,6,89,21,32,7,34,87,6];
+	$result = array_unique($arr);
+	return $result;
+	var_dump($result);
+}
+
+$result = Array8(1);
 
 
 
@@ -25,10 +23,10 @@ $result = sayHelloWorld(10);
 		<div class="content">
 			<?php include 'view/menu.php'; ?>
 			<div class="workplace">
-				<div><h1>Array 3</h1></div>
+				<div><h1>Array 8</h1></div>
 			    <div class="task-item">
 			    	Task:<br>
-			    	Вывести 10 раз слово Hello!
+			    	Удалите в массиве повторы значений.
 			    </div>	
 	           	<div class="task-item">
 	           	    Input:<br>
@@ -36,7 +34,7 @@ $result = sayHelloWorld(10);
 	           	</div>    
 			    <div class="task-item">
 			    	Output:<br>
-			    	<?php echo $result; ?>
+			    	<?php var_dump($result); ?>
 			    </div>	
 			    <div class= "task-item">
 			    	Code:<br>

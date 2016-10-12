@@ -1,34 +1,48 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 </head> 
+
 <?php
 
-//Вывести 10 раз Hello
-function sayHelloWorld($count = 1)
+//Вывести 3 случайных числа от 0 до 100
+
+function RandomNumbers($count = 1)
 {
-	$result = 0;
-	for ($i = 0; $i < $count; $i++) 
+	$min = 0;
+	$max = 100;
+	$result = '';
+	do
 	{
-		$result.= 'Hello World!<br>';
-	}
+		$x = rand($min,$max);
+		$y = rand($min,$max);
+		$z = rand($min,$max);
+		if ($x !== $z && $x !== $y && $z !== $y)
+		{
+			$result = "$x $y $z";
+			break;
+			if ($x == $z && $x == $y && $z == $y)
+			{
+				$x = rand($min,$max);
+	            $y = rand($min,$max);
+	            $z = rand($min,$max);
+			}
+		}
+	}while (1);
 	return $result;
+	
 }
-$description = '';
-$inputData = 'a = 10, b = 20';
-$result = sayHelloWorld(10);
-
-
-
+$result = RandomNumbers(1);
 
 ?>
+
 <?php require 'view/header.php'; ?>
 		<div class="content">
 			<?php include 'view/menu.php'; ?>
 			<div class="workplace">
-				<div><h1>Array 3</h1></div>
+				<div><h1>Заголовок</h1></div>
 			    <div class="task-item">
 			    	Task:<br>
-			    	Вывести 10 раз слово Hello!
+			    	Рандомные числа от 0 до 100.
 			    </div>	
 	           	<div class="task-item">
 	           	    Input:<br>
@@ -52,3 +66,7 @@ $result = sayHelloWorld(10);
 		<?php include 'view/footer.php'; ?>
 	</body>
 </html>
+
+
+
+?>

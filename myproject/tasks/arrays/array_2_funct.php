@@ -3,20 +3,17 @@
 </head> 
 <?php
 
-//Вывести 10 раз Hello
-function sayHelloWorld($count = 1)
+//Cоздать массив из n чисел, каждый элемент которого равен квадрату своего номера
+$i = 1;
+function Array2($count = 1, $result = '')
 {
-	$result = 0;
-	for ($i = 0; $i < $count; $i++) 
+	for ($i = 1; $i <= 10; $i++)
 	{
-		$result.= 'Hello World!<br>';
+		$result[$i] = $i * $i;
 	}
 	return $result;
 }
-$description = '';
-$inputData = 'a = 10, b = 20';
-$result = sayHelloWorld(10);
-
+$result[$i] = Array2(1);
 
 
 
@@ -25,10 +22,10 @@ $result = sayHelloWorld(10);
 		<div class="content">
 			<?php include 'view/menu.php'; ?>
 			<div class="workplace">
-				<div><h1>Array 3</h1></div>
+				<div><h1>Array 2</h1></div>
 			    <div class="task-item">
 			    	Task:<br>
-			    	Вывести 10 раз слово Hello!
+			    	Cоздать массив из n чисел, каждый элемент которого равен квадрату своего номера.
 			    </div>	
 	           	<div class="task-item">
 	           	    Input:<br>
@@ -36,7 +33,7 @@ $result = sayHelloWorld(10);
 	           	</div>    
 			    <div class="task-item">
 			    	Output:<br>
-			    	<?php echo $result; ?>
+			    	<?php var_dump($result[$i]); ?>
 			    </div>	
 			    <div class= "task-item">
 			    	Code:<br>
@@ -52,3 +49,5 @@ $result = sayHelloWorld(10);
 		<?php include 'view/footer.php'; ?>
 	</body>
 </html>
+
+

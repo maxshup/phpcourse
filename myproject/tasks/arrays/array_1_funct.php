@@ -3,32 +3,40 @@
 </head> 
 <?php
 
-//Вывести 10 раз Hello
-function sayHelloWorld($count = 1)
+//Заполнить массив длины n нулями и единицами, при этом данные значения чередуются, начиная с нуля.
+$i = 0;
+function Massiv01($count = 1)
 {
-	$result = 0;
-	for ($i = 0; $i < $count; $i++) 
+	
+	for ($i = 1; $i <= 10; $i++)
 	{
-		$result.= 'Hello World!<br>';
-	}
+		if ($i % 2 == 0)
+		{
+			$result[$i] = 1;
+		}
+		else
+		{
+			$result[$i] = 0;
+		}
+		
+		
+		
+	}	
 	return $result;
 }
-$description = '';
-$inputData = 'a = 10, b = 20';
-$result = sayHelloWorld(10);
 
-
+$result[$i] = Massiv01(1);
 
 
 ?>
 <?php require 'view/header.php'; ?>
 		<div class="content">
-			<?php include 'view/menu.php'; ?>
+			<?php require 'view/menu.php'; ?>
 			<div class="workplace">
-				<div><h1>Array 3</h1></div>
+				<div><h1>Array 1</h1></div>
 			    <div class="task-item">
 			    	Task:<br>
-			    	Вывести 10 раз слово Hello!
+			    	Заполнить массив 0 и 1.
 			    </div>	
 	           	<div class="task-item">
 	           	    Input:<br>
@@ -36,7 +44,7 @@ $result = sayHelloWorld(10);
 	           	</div>    
 			    <div class="task-item">
 			    	Output:<br>
-			    	<?php echo $result; ?>
+			    	<?php var_dump($result[$i]); ?>
 			    </div>	
 			    <div class= "task-item">
 			    	Code:<br>
@@ -52,3 +60,4 @@ $result = sayHelloWorld(10);
 		<?php include 'view/footer.php'; ?>
 	</body>
 </html>
+

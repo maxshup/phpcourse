@@ -1,34 +1,39 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 </head> 
+
 <?php
 
-//Вывести 10 раз Hello
-function sayHelloWorld($count = 1)
+//Найти сумму  1+4+7+10+...+112. Ответ: 2147
+
+$result = '';
+function SummaChisel($count = 1)
 {
-	$result = 0;
-	for ($i = 0; $i < $count; $i++) 
+	$a = 1;
+	$result = '';
+	do
 	{
-		$result.= 'Hello World!<br>';
+		$result = $result + $a;
+		$a = $a + 3;
 	}
+	while ($a <= 112);
 	return $result;
+
 }
-$description = '';
-$inputData = 'a = 10, b = 20';
-$result = sayHelloWorld(10);
-
-
+$result = SummaChisel(1);
 
 
 ?>
+
+
 <?php require 'view/header.php'; ?>
 		<div class="content">
 			<?php include 'view/menu.php'; ?>
 			<div class="workplace">
-				<div><h1>Array 3</h1></div>
+				<div><h1>Заголовок</h1></div>
 			    <div class="task-item">
 			    	Task:<br>
-			    	Вывести 10 раз слово Hello!
+			    	Вывести сумму чисел от 1 до 112.
 			    </div>	
 	           	<div class="task-item">
 	           	    Input:<br>

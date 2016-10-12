@@ -3,21 +3,25 @@
 </head> 
 <?php
 
-//Вывести 10 раз Hello
-function sayHelloWorld($count = 1)
+//Поменять местами наибольший и наименьший элементы массива.
+
+function Array5($count = 1, $result = [60,40])
 {
-	$result = 0;
-	for ($i = 0; $i < $count; $i++) 
-	{
-		$result.= 'Hello World!<br>';
-	}
-	return $result;
+     
+    if ($result[0] < $result[1]) 
+    { 
+        $result = [ 0 => $result[1], 1 => $result[0]]; 
+    } 
+    else
+    
+    {
+    	$result = [ 0 => $result[1], 1 => $result[0]]; 
+    }
+    return $result;
+
+
 }
-$description = '';
-$inputData = 'a = 10, b = 20';
-$result = sayHelloWorld(10);
-
-
+$result = Array5(1);
 
 
 ?>
@@ -25,10 +29,10 @@ $result = sayHelloWorld(10);
 		<div class="content">
 			<?php include 'view/menu.php'; ?>
 			<div class="workplace">
-				<div><h1>Array 3</h1></div>
+				<div><h1>Array 5</h1></div>
 			    <div class="task-item">
 			    	Task:<br>
-			    	Вывести 10 раз слово Hello!
+			    	Поменять местами наибольший и наименьший элементы массива.
 			    </div>	
 	           	<div class="task-item">
 	           	    Input:<br>
@@ -36,7 +40,7 @@ $result = sayHelloWorld(10);
 	           	</div>    
 			    <div class="task-item">
 			    	Output:<br>
-			    	<?php echo $result; ?>
+			    	<?php var_dump($result); ?>
 			    </div>	
 			    <div class= "task-item">
 			    	Code:<br>

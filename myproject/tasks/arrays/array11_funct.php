@@ -3,32 +3,32 @@
 </head> 
 <?php
 
-//Вывести 10 раз Hello
-function sayHelloWorld($count = 1)
+$arr_new = [];
+function Array11()
 {
-	$result = 0;
-	for ($i = 0; $i < $count; $i++) 
+	$arr = [1, -2, 1, 2, -3];
+	$arr_new = [];
+	for ($i = 0; isset($arr[$i]); $i++)
 	{
-		$result.= 'Hello World!<br>';
-	}
-	return $result;
+		array_push($arr_new, $arr[$i]);
+		if ($arr[$i] < 0)
+		{
+			array_push($arr_new, 0);
+			
+		}
+	}return $arr_new;
 }
-$description = '';
-$inputData = 'a = 10, b = 20';
-$result = sayHelloWorld(10);
-
-
-
-
+$arr_new = Array11(1);
 ?>
+
 <?php require 'view/header.php'; ?>
 		<div class="content">
 			<?php include 'view/menu.php'; ?>
 			<div class="workplace">
-				<div><h1>Array 3</h1></div>
+				<div><h1>Заголовок</h1></div>
 			    <div class="task-item">
 			    	Task:<br>
-			    	Вывести 10 раз слово Hello!
+			    	Дан массив размера n. После каждого отрицательного элемента массива вставить элемент с нулевым значением.
 			    </div>	
 	           	<div class="task-item">
 	           	    Input:<br>
@@ -36,7 +36,7 @@ $result = sayHelloWorld(10);
 	           	</div>    
 			    <div class="task-item">
 			    	Output:<br>
-			    	<?php echo $result; ?>
+			    	<?php var_dump($arr_new); ?>
 			    </div>	
 			    <div class= "task-item">
 			    	Code:<br>
@@ -52,3 +52,7 @@ $result = sayHelloWorld(10);
 		<?php include 'view/footer.php'; ?>
 	</body>
 </html>
+
+
+
+

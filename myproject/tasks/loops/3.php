@@ -1,34 +1,42 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 </head> 
+
 <?php
 
-//Вывести 10 раз Hello
-function sayHelloWorld($count = 1)
+//Вывести все числа, меньшие 10000, у которых есть хотя бы одна цифра 3 и которые не делятся на 5.
+
+function ChuclaMense10000($count = 1)
 {
-	$result = 0;
-	for ($i = 0; $i < $count; $i++) 
+	
+	$result = '';
+	for ($i = 0; $i <= 10000; $i++)
 	{
-		$result.= 'Hello World!<br>';
+		if (strpos((integer)$i, "3") !== false)
+		{
+			if (($i % 5) >= 1)
+			{
+				$result++;
+			}
+		}
 	}
 	return $result;
 }
-$description = '';
-$inputData = 'a = 10, b = 20';
-$result = sayHelloWorld(10);
-
-
+$result = ChuclaMense10000(1);
 
 
 ?>
+
+
+
 <?php require 'view/header.php'; ?>
 		<div class="content">
 			<?php include 'view/menu.php'; ?>
 			<div class="workplace">
-				<div><h1>Array 3</h1></div>
+				<div><h1>Заголовок</h1></div>
 			    <div class="task-item">
 			    	Task:<br>
-			    	Вывести 10 раз слово Hello!
+			    	Вывести сумму чисел от 1 до 112.
 			    </div>	
 	           	<div class="task-item">
 	           	    Input:<br>
@@ -36,7 +44,7 @@ $result = sayHelloWorld(10);
 	           	</div>    
 			    <div class="task-item">
 			    	Output:<br>
-			    	<?php echo $result; ?>
+			    	<?php echo "Количество чисел меньше 10000 и делящихся на 5 = ". $result; ?>
 			    </div>	
 			    <div class= "task-item">
 			    	Code:<br>
@@ -52,3 +60,11 @@ $result = sayHelloWorld(10);
 		<?php include 'view/footer.php'; ?>
 	</body>
 </html>
+
+
+
+
+
+
+    
+?> 
