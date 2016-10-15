@@ -46,9 +46,9 @@ $result = sayHelloWorld(10);
 
 
 
+
+
 		</div>
 		<?php include 'view/footer.php'; ?>
 	</body>
 </html>
-
-

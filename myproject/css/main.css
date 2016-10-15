@@ -62,7 +62,7 @@ html, body {
 	float: left;
 	width: 300px;
 	margin: 20px;
-	border-radius: 150px;
+  /*border-radius: 150px; */
 } 
 
 /* FOOTER */
