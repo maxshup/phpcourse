@@ -7,7 +7,7 @@
 
 
 
-function Bileti($count = 1)
+function Bileti()
 {
 	global $percent;
 	$result = '';
@@ -23,46 +23,13 @@ function Bileti($count = 1)
 	}
 
 	$percent = ($result/999999) * 100;
+	$result .= ". Счастливых билетов: {$percent}%";
 	/*echo "Всего билетов" . $result . "<br>Счастливых билетов: ".$percent."%";*/
 	return $result;
 	
 	
 	
 }
-$result = Bileti(1);
-
-
-
-?>
-<?php require 'view/header.php'; ?>
-		<div class="content">
-			<?php include 'view/menu.php'; ?>
-			<div class="workplace">
-				<div><h1>Заголовок</h1></div>
-			    <div class="task-item">
-			    	Task:<br>
-			    	Счастливые билеты.
-			    </div>	
-	           	<div class="task-item">
-	           	    Input:<br>
-	           	    ...
-	           	</div>    
-			    <div class="task-item">
-			    	Output:<br>
-			    	<?php echo "Всего билетов: ".$result. "<br>Счастливых билетов: ".$percent ."%"; ?>
-			    </div>	
-			    <div class= "task-item">
-			    	Code:<br>
-			    	...
-			    </div>	
-			</div>	
-
-
-
-
-
-		</div>
-		<?php include 'view/footer.php'; ?>
-	</body>
-</html>
-   
+$result = Bileti();
+$description = 'Вывести на экран все шестизначные счастливые билеты. Билет называется счастливым, если сумма первых трех цифр в номере билета равна сумме последних трех цифр. Найдите количество счастливых билетов и процент от общего числа билетов.';
+$inputData = 'a, b';
