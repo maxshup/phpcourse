@@ -1,0 +1,1 @@
+ CREATE TABLE category ( id_product VARCHAR(128), name VARCHAR(128), description VARCHAR(128), quantity VARCHAR(128)) ENGINE InnoDB;
