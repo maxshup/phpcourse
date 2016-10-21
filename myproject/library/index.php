@@ -2,6 +2,7 @@
 
 function getTasksMap()
 {
+
 	return [
 			'loops' => [
 				'title' => 'Loops',
@@ -27,6 +28,19 @@ function getTasksMap()
    		    	  		1, 2, 3, 4, 5
    		    ]	]  		
     ];
+
+	return 
+		array(
+			"loops" => array(
+				"title" => "Loops",
+				"tasks" => array(1,2,3,4,5,6)		
+			),
+			"array1" => array(
+	    		"title" => "Arrays1",
+	    		"tasks" => array( 1,2,3,4,5,6,7)
+        	),
+   		);
+
 }
 
 function getTaskTitle($section, $taskNumber)
