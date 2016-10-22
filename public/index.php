@@ -2,7 +2,7 @@
 
 
 
-require_once __DIR__ . '/library/index.php';
+require_once __DIR__ . '/../src/library/index.php';
 $path = '';
 $flag = false;
 
@@ -34,22 +34,22 @@ switch ($pageCode) {
 		break;
 }
 
-$pathToView = __DIR__ . '/view/pages/' .$pageCode . '.php';
+$pathToView = __DIR__ . '/../src/view/pages/' .$pageCode . '.php';
 if (!file_exists($pathToView)) {
 	$pageCode = '404';
-	$pathToView = __DIR__ . '/view/pages/' .$pageCode . '.php';
+	$pathToView = __DIR__ . '/../src/view/pages/' .$pageCode . '.php';
 }
 
 
 ?>
- <?php require 'view/header.php'; ?>
+ <?php require __DIR__ . '/../src/view/header.php'; ?>
 <div class="content">
-	<?php include 'view/menu.php'; ?>
+	<?php include __DIR__ .'/../src/view/menu.php'; ?>
 	<div class="workplace">
 		<?php require $pathToView; ?>
 	</div>	
 </div>
-<?php include 'view/footer.php'; ?>
+<?php require __DIR__. '/../src/view/footer.php'; ?>
 
 
 
