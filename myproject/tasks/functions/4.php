@@ -32,51 +32,26 @@ function Status($status, $booklist)
 $result = Status(1, '');
 
 
-function Conclusion()
-{
-	$handle = fopen("file.txt", "r");
-		while (($buffer = fgets($handle, 1024)) !== false) {
-			$booksChunks = explode('|', $buffer);
-			$booksChunks = array('title' => $booksChunks[0], 'author' => $booksChunks[1],  'print' => $booksChunks[2], 'status' => $booksChunks[3]);
- 			$booklist[] = $booksChunks;
-        }
-        foreach ($booklist as $key => $value) {
-        	// echo $value['title'];
-        }
-        
-        return $booklist;
+function Conclusion($handle)
+{	
+	$arr = Filearr($handle);
+	foreach ($arr as $key => $value) {
+		echo $value['title']." | "."</br>";
+		
 
+	}
+
+
+	// $booksarr = Filearr($booklist);
+	// echo " | Title | "." | Author | "." | Print | "." | status | "."<br>";
+	
+	// 	$file = implode(' | ', $booksarr[0]);
+	// 	$file2 = implode(' | ', $booksarr[1]);
+	// 	$file3 = implode(' | ', $booksarr[2]);
+	// 	$file4= implode(' | ', $booksarr[3]);
+	// 	$file5 = implode(' | ', $booksarr[4]);
+	// 	echo $file."<br>". $file2."<br>".$file3."<br>".$file4."<br>".$file5;
+
+		return ;
 }
 $res = Conclusion('');
-
-?>
-
-<!-- <!DOCTYPE html>
-<html lang="ru">
-	<head>
-		<title>Test html</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="/css/normalize.css">
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-		<style>
-		</style>
-	</head>
-	<body>
-		<table border="1">
-			<tr>
-				<th>Книга</th>
-				<th>Автор</th>
-				<th>Издательство</th>
-				<th>Состояние</th>
-			</tr>
-			<tr>
-				<td><?php  ?></td>
-				<td><?php  ?></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
-	</body>
-</html>	
- -->

@@ -14,6 +14,6 @@ function Array7($result = '')
 }
 $arr = Array7();
 $description = 'Определите, можно ли вычеркнуть из данного массива одно число так, чтобы оставшиеся числа оказались упорядоченными по возрастанию.';
-$inputData = 'a = 10, b = 20';;
+$inputData = '';
 $result = implode(", ", $arr);
 echo $result;
