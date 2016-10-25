@@ -23,11 +23,11 @@ function Status($status, $booklist)
 	// echo "<pre>";
 	// print_r($books);
 	// echo "</pre>";
-			foreach ($books as $key => $value) {
-		 		if ($value['status'] == $status) {
-					 echo $value['title'] ."<br>";
-				}
-			}return $books;	
+	foreach ($books as $key => $value) {
+		if ($value['status'] == $status) {
+			 echo $value['title'] ."<br>";
+		}
+	}return $books;	
 }
 $result = Status(1, '');
 
