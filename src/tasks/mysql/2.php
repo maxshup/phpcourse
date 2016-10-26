@@ -1,18 +1,35 @@
 <?php
 
-try {
-$dsn = 'mysql:host=localhost;dbname=market';
-$username = 'maxim';
-$password = 'maxim';
-$db = new PDO($dsn, $username, $password);
-$statement = $db->query('SELECT * FROM category');
-$statement->setFetchMode(PDO::FETCH_ASSOC);
-$rows = $statement->fetchAll();
-var_dump($rows);
-} catch (PDOException $exception) {
-	echo 'Error! Message: ' . $exeption->getmessage() . ' Code: ' . $exception->getCode();
+function dbConnect($dsn, $username, $password)
+{
+	try {
+ 		$dbconnection = new PDO($dsn, $username, $password);
+ 	} catch (PDOException $exception) {
+ 		$dbconnection = NULL;
+ 	}
+ 	return $dbconnection;
+} 
 
+function AddToDb($dbconnection, $queryAdd, $queryUpd)
+{
+	
+ 	$statement = $dbconnection->prepare($queryAdd);
+ 	$statement->execute(array(":lightsabers" => "lightsabers", ":description" => "Electric lightsabers"));
+ 	$statement = $dbconnection->prepare($queryUpd);
+ 	$statement->execute();
+ 	$count = $statement->rowCount();
+	return $count;
 }
-$description = '';
+
+$dsn = 'mysql:host=localhost;dbname=market';
+$username = 'maxshup';
+$password = 'maxshup';
+$queryAdd = "INSERT INTO category(name, description) VALUES(:lightsabers, :description)";
+$queryUpd = "UPDATE category SET name = 'Dual-lightsabers', description = 'Epic sabers!' WHERE description = 'Electric lightsabers'";
+
+$connect = dbConnect($dsn, $username, $password);
+$add = AddToDb($connect, $queryAdd, $queryUpd);
+
+$result = '';
 $inputData = '';
-$result ='';
+$description = 'Функция обновления записи в БД.';

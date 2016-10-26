@@ -1,24 +1,27 @@
 <?php
-$dbHostname = 'localhost';
-$dbUsername = 'maxim';
-$dbPassword = 'maxim';
-$database = 'market';
 
-$mysqli = new mysqli($dbHostname, $dbUsername, $dbPassword, $database);
-if (mysqli_connect_errno($mysqli)) {
-	echo "Failed to connect to MySQL: ".mysqli_connect_error();
-}
-
-$sql = <<<SQL
-	SELECT * FROM category
-SQL;
-$rows = [];
-$res = $mysqli->query($sql);
-while ($row = $res->fetch_assoc()) {
-	$rows[] = var_export($row, true);
+function addToDb($dsn, $username, $password)
+{
+	try {
+		$dbconnection = new PDO($dsn, $username, $password);
+	} catch (PDOException $exception) {
+		echo $exception->getMessage();
+	}
 	
+
+	$statement = $dbconnection->query('SHOW TABLES');
+	$statement = $dbconnection->prepare("INSERT INTO category(name, description) VALUES(:lightsabers, :description)");
+	$statement->execute(array(":lightsabers" => "Пример1", ":description" => "real"));
+	$count = $statement->rowCount();
+	return $count;
 }
 
-$result = implode('<br>', $rows);
-$description = var_dump($rows);
-$inputData = '';		
+$dsn = 'mysql:host=localhost;dbname=market';
+$username = 'maxshup';
+$password = 'maxshup';
+
+$add = addToDb($dsn, $username, $password);
+
+$result = '';
+$inputData = '';
+$description = '';

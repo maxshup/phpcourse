@@ -12,7 +12,7 @@ function Filearr($booklist)
 		// print_r($booklist);
 		// echo "</pre>";
 		fclose($handle);
-		return $booklist;
+	return $booklist;
 }
 
 
